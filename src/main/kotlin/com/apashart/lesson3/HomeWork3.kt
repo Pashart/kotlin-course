@@ -32,7 +32,7 @@ private var totalReportEvent: String = "Подробный бюджет меро
 
 var countParticipants: Int = 0
     get() = field
-    private set(value) {} //set приватный, нельзя залезть с наружи, только изнутри. в Фигурных можно указать условие о максимальном кол-ве участников
+    private set(value) {field=value} //set приватный, нельзя залезть с наружи, только изнутри. в Фигурных можно указать условие о максимальном кол-ве участников
 
 //Длительность хакатона
 
@@ -52,7 +52,7 @@ val sponsorList = "Спонсор1, спонсор2"
 
 //Бюджет мероприятия ТУТ
 
-var budgetEvent: String by lazy {
+private var budgetEvent: String by lazy {
     "Бюджет мероприятия"
 }
 
@@ -62,9 +62,7 @@ var levelIntetnet: Double = 1.1
 
 //Информация о транспортировке оборудования, распределении ресурсов и координации между различными командами поддержки.
 
-var infoSupport: String by lazy {
-    "Информация о транспортировке оборудования, распределении ресурсов и координации между различными командами поддержки."
-}
+var infoSupport: String = "Информация о транспортировке оборудования, распределении ресурсов и координации между различными командами поддержки."
 
 //Количество команд
 
@@ -76,7 +74,7 @@ val taskList: String = "Задача 1, задача 2" //может быть з
 
 //План эвакуации
 
-const val PLAN_EVACUATION = "План эвакуации"
+val planEvacuation = "План эвакуации" //лучше делать не константой, потому что это просто ссылка на картинку
 
 //Список доступного оборудования
 
@@ -84,7 +82,7 @@ var listEquipment = "equipment"
 
 //Список свободного оборудования
 
-var freeEquipment: String = "equipment"
+private var freeEquipment: String = "equipment"
 
 //График питания участников (зависит от поставщика питания, определяемого за неделю до начала)
 
@@ -92,11 +90,7 @@ lateinit var menu: String
 
 //План мероприятий на случай сбоев
 
-var backupPlan: String = "Беда"
-    get() = field
-    set(value) {
-        if (value = "Беда") "Запасной план"
-    }
+val backupPlan: String = "План мероприятий" //просто план
 
 //Список экспертов и жюри
 
@@ -104,7 +98,9 @@ var listExperts = "Список"
 
 //Методы и процедуры для сбора отзывов от участников и гостей, включая анонимные опросы и интервью.
 
-val listFeedbackMethod: String = "Методы и процедуры для сбора отзывов от участников и гостей, включая анонимные опросы и интервью."
+val listFeedbackMethod: String by lazy {
+    "Методы и процедуры для сбора отзывов от участников и гостей, включая анонимные опросы и интервью."
+}
 
 //Политика конфиденциальности
 
@@ -112,7 +108,9 @@ const val PRIVACY_POLICY = "privacy policy"
 
 //Приватные отзывы (фидбэк) участников и зрителей для анализа проблем.
 
-private lateinit var feedbackPrivacy: String
+private val feedbackPrivacy: String by lazy {
+    "отзывы (фидбэк)"
+}
 
 //Текущая температура в помещении
 
@@ -120,8 +118,7 @@ var temperature: Double = 0.0
 
 //Мониторинг и анализ производительности сетевого оборудования и интернет-соединения.
 
-var levelMonitoring: Double = 0.0
-var levelMonitoringStr: String = "level monitoring"
+private var levelMonitoringStr: String = "level monitoring"
 
 //Уровень освещения
 
@@ -129,7 +126,7 @@ var levelLight: Double = 0.0
 
 //Лог событий мероприятия
 
-??
+var log: String = "dkjf"
 
 //Доступность медицинской помощи
 
@@ -137,11 +134,11 @@ var medicalAssistance = true
 
 //Планы и процедуры для обеспечения безопасности мероприятия, включая планы эвакуации и протоколы чрезвычайных ситуаций.
 
-val safePlan: String = "План"
+private val safePlan: String = "План"
 
 //Регистрационный номер мероприятия
 
-const val registeredNumber: Int = 134392
+val registeredNumber: Int = 134392
 
 //Максимально допустимый уровень шума в помещении хакатона.
 
@@ -149,11 +146,7 @@ const val noiseLevelMax: Int = 12
 
 //Индикатор превышения уровня шума в помещениях
 
-var noiseLevel: Int = 0
-    get() = field
-    set(value) {
-        if (value > noiseLevelMax) println ("Уровень шума превышен")
-    }
+var noiseLevel = false
 
 //Формат мероприятия (зависит от геополитической обстановки)
 
@@ -207,7 +200,9 @@ val a11y: String = "условия"
 
 //Общее настроение участников (определяется опросами)
 
-lateinit var moodMembers: String
+val moodMembers: String by lazy {
+    "Общее настроение участников" //Опрос будет в конце и мы в конце сможем узнать результат. и он не поменятся. Сбор инфы из запросов производится через код
+}
 
 //Подробный план хакатона, включающий время и содержание каждого сегмента, инициализируется непосредственно перед началом мероприятия.
 
@@ -215,7 +210,7 @@ lateinit var planHakaton: String
 
 //Имя знаменитого специального гостя, которое будет объявлено за день до мероприятия.
 
-private var specialityGuest = "Name"
+lateinit var specialityGuest = "Name"
 
 //Максимальное количество людей, которое может вместить место проведения.
 
