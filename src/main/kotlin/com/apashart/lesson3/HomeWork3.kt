@@ -1,5 +1,5 @@
 package com.apashart.lesson3
-
+/*
 //Условия
 /*
 Для каждого из полей подбери наилучший способ хранения из известных тебе.
@@ -220,3 +220,5 @@ const val MAX_COUNT_MEMBERS: Int = 100
 
 var timeWork = 4*60*60
 
+
+ */
