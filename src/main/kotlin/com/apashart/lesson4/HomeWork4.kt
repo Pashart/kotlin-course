@@ -1,0 +1,45 @@
+package com.apashart.lesson4
+
+//Для каждого значения допиши подходящий тип данных
+val shortByte: Byte = 42
+val longLong: Long = 98765432123456789L
+val thisFloat: Float = 23.45f
+val thisDouble: Double= 0.123456789
+val nameLanguage: String = "Kotlin & Java"
+val myBoolean: Boolean = false
+val myChar: Char = 'c'
+val myShortest: Short = 500
+val yetLong: Long = 4294967296L
+val yetAnatherFloat: Float = 18.0f
+val fDouble: Double = -0.001
+val thisString: String = "OpenAI"
+//val wowAny: String = “true” //либо меняем кавычки, либо убираем их
+val wowAny1: String = "true"
+val wowAny2: Boolean = true
+val anyChar: Any = '9' //тут будет char
+val anyInt: Int = 2048
+val fuckLong: Long = 10000000000L
+val avyFloat: Any = 0.75f
+val fuckDouble: Double = 1.414
+val fuckString: String = "Artificial Intelligence"
+val fuckBoolean: Boolean = false
+val fuckChar: Char = '@'
+val wowShort: Short = 1024
+val wowLong: Long = 1234567890123L
+val wowFloat: Float = 10.01f
+val kwDouble: Double = -273.15
+val yString: String = "SpaceX"
+val buBoolean: Boolean = true
+val errorChar: String = "“🤯”" // либо меняем кавычки, либо убираем их
+val errorInt: String = "‘65535’" // опять не верный тип данных
+val yyyyLong: Long = 72057594037927935L
+val yyFloat: Float = 2.71828f
+val yyDouble: Double = 101.0101
+val yyStr: String = "Quantum Computing"
+val uuBoolean: Boolean = false
+val hChar: Char = 'x'
+val hShort: Short = 314
+val jLong: Long = 123456789123456789L
+val jFloat: Float = 6.626f
+val vDouble: Double = 0.007
+val sStr: String = "Android Studio"
