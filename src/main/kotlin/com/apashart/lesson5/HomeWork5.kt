@@ -24,7 +24,7 @@ fun main () {
 }
 fun meterSound (startNoise: Int, k: Double?) {
     val defoltK = 0.5 //дефолтный коэфицент
-    var levelSound = startNoise * (k ?: defoltK)
+    val levelSound = startNoise * (k ?: defoltK)
     println("Уровень звука: $levelSound")
 }
 // ======
@@ -36,7 +36,7 @@ fun meterSound (startNoise: Int, k: Double?) {
 
 fun diliveryFullCost (cargoPrice: Int?, diliveryPrice: Double) {
     val defoltInsurancePrice = 50
-    var insurancePrice = (cargoPrice ?: defoltInsurancePrice) * 0.005
+    val insurancePrice = (cargoPrice ?: defoltInsurancePrice) * 0.005
     println("Стоимость груза: " + (insurancePrice + diliveryPrice))
 }
 
