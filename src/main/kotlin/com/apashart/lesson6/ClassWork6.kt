@@ -61,11 +61,15 @@ fun main() {
 fun getTimesOfDay1 (hour: Int): String { // Способ 1. Не оч гуд, так как много операторов сравнения + return опеределяется кажый раз
     if (hour >= 0 && hour < 5) return "Ночь"
     if (hour >= 5 && hour < 11) return "Утро"
+    return "что-то"
 }
+
 fun getTimesOfDay2 (hour: Int): String { // Способ 2. Выбор реализован через диапазон + return опеределяется кажый раз
     if (hour in 0..4) return "Ночь"
     if (hour in 5..11) return "Утро"
+    return "<UNK>"
 }
+
 fun getTimesOfDay3 (hour: Int): String { // if else + определение return через условный оператор
     return if (hour < 0 || hour > 23) {
         "Неверное значение времени"
