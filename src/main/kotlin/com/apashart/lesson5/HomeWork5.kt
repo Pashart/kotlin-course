@@ -47,5 +47,5 @@ fun diliveryFullCost (cargoPrice: Int?, diliveryPrice: Double) {
 // Задача: сообщить об ошибке в случае отсутствия показаний атмосферного давления.
 
 fun weatherMeter (atmosphericPressure: Double?) {
-    atmosphericPressure ?: throw Exception("Лаборант мудак, потерял показания")
+    atmosphericPressure ?: throw Exception("Лаборант потерял показания -- мудак")
 }
