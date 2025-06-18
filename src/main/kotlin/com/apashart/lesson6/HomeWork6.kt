@@ -5,11 +5,11 @@ fun main () {
     season1(3)
     season2(1)
     agePet(2)
-    typeTransport(1)
+    typeTransport(1.0)
     bonusPoint(10)
     typeDocument(".xlsx")
     conversionTemp2(67.0,"C")
-    garmentWheather(89)
+    garmentWhether(89)
     agreementFilm(18)
 }
 
@@ -22,7 +22,7 @@ fun season1 (numberMonth: Int): String {
     if (numberMonth in 6..8) return "Лето"
     if (numberMonth in 9..11) return "Осень"
     if (numberMonth == 12 || numberMonth in 1..2) return "Зима"
-    return "Номер месяца некорретный"
+    return "Номер месяца некорректный"
 }
 
 fun season2 (numberMonth: Int): String {
@@ -31,7 +31,17 @@ fun season2 (numberMonth: Int): String {
         numberMonth in 6..8 -> "Лето"
         numberMonth in 9..11 -> "Осень"
         numberMonth == 12 || numberMonth in 1..2 -> "Зима"
-        else -> "Некорректный номер месяцца"
+        else -> "Некорректный номер месяца"
+    }
+}
+
+fun season3 (monthNumber: Int): String { //Вариант от Саши Молоковича
+    return when (monthNumber) {
+        !in 1..12 -> "Неверно указан месяц" //в начале через !in исключить ошибки, а потом сделать цикл на месяца
+        in 3..5 -> "Весна"
+        in 6..8 -> "Лето"
+        in 9..11 -> "Осень"
+        else -> "Зима" //Не надо мудрить с Зимой, можно оставить её под else
     }
 }
 
@@ -43,7 +53,9 @@ val kofUnder2 = 10.5
 val kofPost2 = 4.0
 
 fun agePet (yearsPet: Int) {
-    if (yearsPet <= 2) {
+    return if (yearsPet < 0) {
+        throw Exception ("ты дурак?") //лучше добавить такую проверку, чтобы исключить отрицательный вариант
+    } else if (yearsPet <= 2) {
         println ("Возраст собаки: " + yearsPet * kofUnder2)
     } else {
         println ("Возраст собаки: " + yearsPet * kofPost2)
@@ -54,10 +66,11 @@ fun agePet (yearsPet: Int) {
 //Контекст: Напишите функцию, которая определяет, какой вид транспорта лучше использовать, исходя из длины маршрута.
 // Если маршрут до 1 км - "пешком", до 5 км - "велосипед", иначе - "автотранспорт".
 
-fun typeTransport (lenghtRoute: Int) {
-    return when (lenghtRoute) {
-        in 0 until 1 -> println("Пешком")
-        in 1..5 -> println("Велосипед")
+fun typeTransport (lenghtRoute: Double) { //лучше тип дабл, потому что 1 километр слишком большой шаг
+    return when {
+        lenghtRoute < 0.0 -> throw Exception ("ты дурак?") //добавили проверку на дурака
+        lenghtRoute <= 1.0 -> println("Пешком") //ушли от диапазона что бы было легчи читать
+        lenghtRoute <= 5.0 -> println("Велосипед")
         else -> println("Автотраспорт")
 }
 }
@@ -68,11 +81,14 @@ fun typeTransport (lenghtRoute: Int) {
 // 2 балла за каждые 100 рублей при сумме покупки до 1000 рублей и 5 баллов за каждые 100 рублей при сумме свыше этого.
 
 fun bonusPoint (purchasePrice: Int) {
-     var bonusP1: Int = if (purchasePrice < 1000) {
-        purchasePrice / 100 * 2
+    if (purchasePrice < 0) throw Exception ("ты дурак?") //в начале делаем проверку на дурака
+    val difPrice = purchasePrice / 100 //делаем переменную которая позволит нам посчитать сколько целых сотен
+    val coefPrice: Int = if (purchasePrice < 1000) {
+        difPrice * 2
     } else {
-        purchasePrice / 100 * 5
+        difPrice * 5
     }
+    var bonusP1 = coefPrice * difPrice //считаем отдельно коэфицент
     println("Количество бонусных баллов: $bonusP1")
 }
 
@@ -135,7 +151,7 @@ fun conversionTemp2 (temp: Double, measureUnit: String) {
 // "футболка и шорты" при температуре выше 15.
 // При температурах ниже -30 и выше +35 рекомендуйте не выходить из дома.
 
-fun garmentWheather (temp: Int) {
+fun garmentWhether (temp: Int) {
     when (temp) {
         in -30 until 0 -> println("куртка и шапка")
         in 0..15 -> println("ветровка")
@@ -153,6 +169,7 @@ fun garmentWheather (temp: Int) {
 
 fun agreementFilm (age: Int) {
     when (age) {
+        !in 1..17 -> println("ты дурак?")
         in 0..12 -> println("детские")
         in 13..17 -> println("подростковые")
         else -> println("18+")
