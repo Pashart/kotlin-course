@@ -52,7 +52,7 @@ fun main () {
 
     var counter1 = 100
     while (counter1 >= 1) { //Количество цифр в числе в диапазоне от 1-100, уменьшая каждый раз
-        println(counter1--.toString().length) //дикремент тут потому иначе сразу вычитается 100
+        println(counter1--.toString().length) //декремент тут потому иначе сразу вычитается 100
     }
 }
 
