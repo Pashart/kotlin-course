@@ -226,17 +226,17 @@ fun main () {
 //Числа Фибоначчи до 50: Напишите программу, которая выводит все числа Фибоначчи, не превышающие 50, с использованием цикла while.
     //Формула чисел Фибоначчи: F(n) = F(n-1) + F(n-2), где:
 
-    println("числа фибоначи")
-    var f0 = 0
-    var f1 = 1
-    var fR = f0 + f1
-    println(fR)
-    fR = fR + f1
-    println(fR)
-    fR = (fR-f1) + fR
-    println(fR)
-    fR = fR + ((fR-f1) - fR)
-    println(fR)
+//    println("числа фибоначи")
+//    var f0 = 0
+//    var f1 = 1
+//    var fR = f0 + f1
+//    println(fR)
+//    fR = fR + f1
+//    println(fR)
+//    fR = (fR-f1) + fR
+//    println(fR)
+//    fR = fR + ((fR-f1) - fR)
+//    println(fR)
 
 //Счетчик шагов: Создайте программу, которая считает шаги от 0 до 30 с шагом 5, используя цикл while.
     var shag = 0
@@ -246,7 +246,7 @@ fun main () {
     }
 //Среднее значение фиксированного списка чисел: Найдите среднее значение чисел из списка [4, 8, 15, 16, 23, 42] с помощью цикла while.
 
-//    val listNumbers = listOf<Int>(4, 8, 15, 16, 23, 42)
+val listNumbers = listOf<Int>(4, 8, 15, 16, 23, 42)
 //    var index = 0
 //    var resultInd = 0
 //    while (true) {
