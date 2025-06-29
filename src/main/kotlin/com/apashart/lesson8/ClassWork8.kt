@@ -36,7 +36,7 @@ fun main() {
     val upper = "hello".uppercase() //перевести все буквы в верхний регистр
     val lower = "HELLO".lowercase() //переводит символы в нижний регистр
     val trimmed = "  hello  ".trim() //удаляет крайние пробелы (в начале и в конце)
-    val trimmed = "  hello  ".trim( 'h', '.') //может удалять конкретные символы в строке
+    val trimmed2 = "  hello  ".trim( 'h', '.') //может удалять конкретные символы в строке
     val starts = "Kotlin".startsWith("Kot") //начинается ли строка с определенного значение - булево
     val ends = "Kotlin".endsWith("lin")//Заканчивается ли строка определенным значением - булево
     val contains = "Hello".contains("ell") //входит ли строка в строку - булево
@@ -55,7 +55,7 @@ fun main() {
 
     val name = "Алексей"
     val city = "Москва"
-    val age = 32
+    val age2 = 32
     val friendsCount = 1052
     val rating = 4.948
     val balance = 2534.75856
@@ -75,7 +75,7 @@ fun main() {
     %.1f - количество знаков после запятой
     $%,.2f - в начале разделяем на тысячи, а потом 1 символ после запятой
      */
-    println(text.format(name, city, age, friendsCount, rating, balance)) // подставляет значения вместо символов форматирования, должно быть равно кол-ву заглушек
+    println(text.format(name, city, age2, friendsCount, rating, balance)) // подставляет значения вместо символов форматирования, должно быть равно кол-ву заглушек
 
     //вызовы переменных для функций из практической работы
 
